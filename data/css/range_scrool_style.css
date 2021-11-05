@@ -1,0 +1,224 @@
+.range_input_speed_front {
+ 
+  background:#2F3250;
+  padding:1px 15px;
+  display:flex;
+  align-items:center;
+  border-radius:7px;
+
+}
+.range_input_speed_front input {
+  -webkit-appearance:none;
+  width: 170px;;
+  height:3px;
+  background:#eee;
+  border:none;
+  outline:none;
+}
+.range_input_speed_front input::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:18px;
+  height:18px;
+  background:#4471EF;
+  border:3px solid #4471EF;
+  border-radius:50%;
+}
+.range_input_speed_front input::-webkit-slider-thumb:hover {
+  background:#4471EF
+}
+.range_input_speed_front .value {
+  color:#eee;
+  text-align:center;
+  font-weight:500px;
+  line-height:40px;
+  height:40px;
+  overflow:hidden;
+  margin-left:5px;
+}
+.range_input_speed_front .value div {
+  transition:all 300ms ease-in-out;
+}
+
+
+
+
+.range_input_speed_basic {
+ 
+  background:#2F3250;
+  padding:1px 15px;
+  display:flex;
+  align-items:center;
+  border-radius:7px;
+
+}
+.range_input_speed_basic input {
+  -webkit-appearance:none;
+  width: 170px;;
+  height:3px;
+  background:#eee;
+  border:none;
+  outline:none;
+}
+.range_input_speed_basic input::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:18px;
+  height:18px;
+  background:#4471EF;
+  border:3px solid #4471EF;
+  border-radius:50%;
+}
+.range_input_speed_basic input::-webkit-slider-thumb:hover {
+  background:#4471EF
+}
+.range_input_speed_basic .value {
+  color:#eee;
+  text-align:center;
+  font-weight:500px;
+  line-height:40px;
+  height:40px;
+  overflow:hidden;
+  margin-left:5px;
+}
+.range_input_speed_basic .value div {
+  transition:all 300ms ease-in-out;
+}
+
+
+
+
+
+
+
+.range_input_bright_ws2812_front {
+ 
+  background:#2F3250;
+  padding:1px 15px;
+  display:flex;
+  align-items:center;
+  border-radius:7px;
+
+}
+.range_input_bright_ws2812_front input {
+  -webkit-appearance:none;
+  width: 170px;;
+  height:3px;
+  background:#eee;
+  border:none;
+  outline:none;
+}
+.range_input_bright_ws2812_front input::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:18px;
+  height:18px;
+  background:#4471EF;
+  border:3px solid #4471EF;
+  border-radius:50%;
+}
+.range_input_bright_ws2812_front input::-webkit-slider-thumb:hover {
+  background:#4471EF
+}
+.range_input_bright_ws2812_front .value {
+  color:#eee;
+  text-align:center;
+  font-weight:500px;
+  line-height:40px;
+  height:40px;
+  overflow:hidden;
+  margin-left:5px;
+}
+.range_input_bright_ws2812_front .value div {
+  transition:all 300ms ease-in-out;
+}
+
+
+
+
+.range_input_bright_ws2812_basic {
+ 
+  background:#2F3250;
+  padding:1px 15px;
+  display:flex;
+  align-items:center;
+  border-radius:7px;
+
+}
+.range_input_bright_ws2812_basic input {
+  -webkit-appearance:none;
+  width: 170px;;
+  height:3px;
+  background:#eee;
+  border:none;
+  outline:none;
+}
+.range_input_bright_ws2812_basic input::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:18px;
+  height:18px;
+  background:#4471EF;
+  border:3px solid #4471EF;
+  border-radius:50%;
+}
+.range_input_bright_ws2812_basic input::-webkit-slider-thumb:hover {
+  background:#4471EF
+}
+.range_input_bright_ws2812_basic .value {
+  color:#eee;
+  text-align:center;
+  font-weight:500px;
+  line-height:40px;
+  height:40px;
+  overflow:hidden;
+  margin-left:5px;
+}
+.range_input_bright_ws2812_basic .value div {
+  transition:all 300ms ease-in-out;
+}
+
+
+
+
+
+
+
+
+.range_input_bright_lamp {
+ 
+  background:#2F3250;
+  padding:1px 15px;
+  display:flex;
+  align-items:center;
+  border-radius:7px;
+
+}
+.range_input_bright_lamp input {
+  -webkit-appearance:none;
+  width: 170px;;
+  height:3px;
+  background:#eee;
+  border:none;
+  outline:none;
+}
+.range_input_bright_lamp input::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:18px;
+  height:18px;
+  background:#4471EF;
+  border:3px solid #4471EF;
+  border-radius:50%;
+}
+.range_input_bright_lamp input::-webkit-slider-thumb:hover {
+  background:#4471EF
+}
+.range_input_bright_lamp .value {
+  color:#eee;
+  text-align:center;
+  font-weight:500px;
+  line-height:40px;
+  height:40px;
+  overflow:hidden;
+  margin-left:5px;
+}
+.range_input_bright_lamp .value div {
+  transition:all 300ms ease-in-out;
+}
+

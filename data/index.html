@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/accordion_style.css" />
+    <link rel="stylesheet" href="css/backgraund_animation.css" />
+    <link rel="stylesheet" href="css/button_style.css" />
+    <link rel="stylesheet" href="css/modal_window.css" />
+    <link rel="stylesheet" href="css/element_color.css" />
+    <link rel="stylesheet" href="css/range_scrool_style.css" />
+
+
+
+    <title>IN-12 Clock</title>
+
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container">
+        <h2 class="title">IN-12 Clock</h2>
+        <div class="settings">
+
+
+            <div class="result">
+
+                <div class="result__viewbox" id="result">00:00:00</div>
+                <script src="js/get_lamp_time.js"></script>
+
+            </div>
+
+            <div class="settings"><span class="settings__title setting-title">Настройки:</span></div>
+            <button class="accordion">WI-FI</button>
+
+            <div class="panel">
+
+
+                <div class="info_wifi_conteiner" id="info_wifi_conteiner_id">
+
+                    <div class="settings"><span class="settings__title setting-title">Текущий SSID:</span></div>
+                    <div class="result_connect">
+                        <div id="result_connect_id">IN-12 Clock AP</div>
+                    </div>
+
+                    <div class="settings"><span class="settings__title setting-title">IP Address</span></div>
+                    <div class="result_connect">
+                        <div id="result_connect_id">192.168.4.1</div>
+                    </div>
+                    <div style="padding-top: 10px"></div>
+                    <button class="button_click" onclick="radactor_setting_coonnect_fnc();"
+                        id="radactor_setting_coonnect">Изменить</button>
+                </div>
+
+                <div class="connect_wifi_conteiner" id="connect_wifi_conteiner_id" style="display:none">
+
+                    <div class="settings"><span class="settings__title setting-title">Имя точки доступа</span></div>
+                    <input type="text" class="textbox_style" id="Text_SSID" placeholder="SSID">
+                    <div class="settings"><span class="settings__title setting-title">Пароль точки доступа</span></div>
+                    <input type="password" class="textbox_style" id="Text_PASSWORD" placeholder="PASSWORD">
+                    <div style="padding-top: 1em"></div>
+
+                    <div style="display:inline-block;">
+                        <button class="button_click_gorizontal" onclick="return_setting_coonnect_fnc();"
+                            id="return_settings_connect">Назад</button>
+                        <button class="button_click_gorizontal" id="save_setting_coonnect">Сохранить</button>
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!-- <button class="button_click" id="connect_wifi">Подключиться</button> -->
+            </div>
+
+            <button class="accordion">IN-12</button>
+            <div class="panel">
+
+                <div>
+
+
+
+
+                    <div class="settings"><span class="settings__title setting-title">Автоматическая яркость по
+                            фоторезистору</span></div>
+                    <div class="setting">
+                        <input type="checkbox" id="checkbox_auto_brightnes" />
+                        <label for="checkbox_auto_brightnes">Автояркость</label>
+                    </div>
+                </div>
+
+
+                <div class="settings"><span class="settings__title setting-title">Яркость ламп</span>
+                    <div class="range_input_bright_lamp">
+                        <input type="range" id="range_brightnes_lamp" min="0" max="100" step="1">
+                        <div class="value">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="settings"><span class="settings__title setting-title">Автосинхронизация времени по
+                        UDP</span></div>
+                <div class="setting">
+                    <input type="checkbox" id="checkbox_auto_synch_time" />
+                    <label for="checkbox_auto_synch_time">Автосинхронизация</label>
+                </div>
+
+                <div>
+                    <div class="settings"><span class="settings__title setting-title">Автосинхронизация времени по
+                            UDP</span></div>
+                    <button class="button_click" id="button_synch_time">Синхронизировать</button>
+                </div>
+            </div>
+
+
+
+            <button class="accordion">WS2812 FRONT</button>
+
+
+            <div class="panel">
+
+                <div class="setting">
+                    <input type="checkbox" id="checkbox_auto_brightnes" />
+                    <label for="checkbox_auto_brightnes">Автовыбор цвета</label>
+                </div>
+
+                <div class="settings"><span class="settings__title setting-title">Выбор основного цвета</span>
+                </div>
+
+                <input type="color" class="element_color" id="color_led_front">
+
+
+                <div class="settings"><span class="settings__title setting-title">Яркость</span>
+                    <div class="range_input_bright_ws2812_front">
+                        <input type="range" id="range_brightnes_front" min="0" max="255" step="1">
+                        <div class="value">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding-top: 10px"></div>
+
+
+                <div class="settings"><span class="settings__title setting-title" id="select_effects_front">Выбор
+                        эффекта</span></div>
+                <select class="select-css" id="select_void_option_ws2812_front">
+                    <option value="0">Static</option>
+                    <option value="1">Blink</option>
+                    <option value="2">Breath</option>
+                    <option value="3">Color</option>
+                    <option value="4">Color Wipe Inverse</option>
+                    <option value="5">Color Wipe Reverse</option>
+                    <option value="6">Color Wipe Reverse Inverse</option>
+                    <option value="7">Color Wipe Random</option>
+                    <option value="8">Random Color</option>
+                    <option value="9">Single Dynamic</option>
+                    <option value="10">Multi Dynamic</option>
+                    <option value="11">Rainbow</option>
+                    <option value="12">Rainbow Cycle</option>
+                    <option value="13">Scan</option>
+                    <option value="14">Dual Scan</option>
+                    <option value="15">Fade</option>
+                    <option value="16">Theater Chase</option>
+                    <option value="17">Theater Chase Rainbow</option>
+                    <option value="18">Running Lights</option>
+                    <option value="19">Twinkle</option>
+                    <option value="20">Twinkle Random</option>
+                    <option value="21">Twinkle Fade</option>
+                    <option value="22">Twinkle Fade Random</option>
+                    <option value="23">Sparkle</option>
+                    <option value="24">Flash Sparkle</option>
+                    <option value="25">Hyper Sparkle</option>
+                    <option value="26">Strobe</option>
+                    <option value="27">Strobe Rainbow</option>
+                    <option value="28">Multi Strobe</option>
+                    <option value="29">Blink Rainbow</option>
+                    <option value="30">Chase White</option>
+                    <option value="31">Chase Color</option>
+                    <option value="32">Chase Random</option>
+                    <option value="33">Chase Rainbow</option>
+                    <option value="34">Chase Flash</option>
+                    <option value="35">Chase Flash Random</option>
+                    <option value="36">Chase Rainbow White</option>
+                    <option value="37">Chase Blackout</option>
+                    <option value="38">Chase Blackout Rainbow</option>
+                    <option value="39">Color Sweep Random</option>
+                    <option value="40">Running Color</option>
+                    <option value="41">Running Red Blue</option>
+                    <option value="42">Running Random</option>
+                    <option value="43">Larson Scanner</option>
+                    <option value="44">Comet</option>
+                    <option value="45">Fireworks</option>
+                    <option value="46">Fireworks Random</option>
+                    <option value="47">Merry Christmas</option>
+                    <option value="48">Fire Flicker</option>
+                    <option value="49">Fire Flicker (soft)</option>
+                    <option value="50">Fire Flicker (intense)</option>
+                    <option value="51">Circus Combustus</option>
+                    <option value="52">Halloween</option>
+                    <option value="53">Bicolor Chase</option>
+                    <option value="54">Tricolor Chase</option>
+                    <option value="55">TwinkleFOX</option>
+
+
+                </select>
+
+
+
+
+
+                <div style="padding-top: 6px"></div>
+
+
+
+                <div class="settings"><span class="settings__title setting-title">Скорость эффекта</span>
+                    <div class="range_input_speed_front">
+                        <input type="range" id="range_speed_front" min="0" max="100" step="1">
+                        <div class="value">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <button class="accordion">WS2812 BASIC</button>
+            <div class="panel">
+
+
+                <div class="settings"><span class="settings__title setting-title">Выбор основного цвета</span>
+                </div>
+
+                <input type="color" class="element_color" id="color_led_basic">
+
+
+                <div class="settings"><span class="settings__title setting-title">Яркость</span>
+                    <div class="range_input_bright_ws2812_basic">
+                        <input type="range" id="range_brightnes_basic" min="0" max="255" value="0" step="1">
+                        <div class="value">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="padding-top: 10px"></div>
+
+
+
+                <div class="settings"><span class="settings__title setting-title">Выбор эффекта</span></div>
+                <select class="select-css" id="select_void_option_ws2812_basic">
+                    <option value="0">Static</option>
+                    <option value="1">Blink</option>
+                    <option value="2">Breath</option>
+                    <option value="3">Color</option>
+                    <option value="4">Color Wipe Inverse</option>
+                    <option value="5">Color Wipe Reverse</option>
+                    <option value="6">Color Wipe Reverse Inverse</option>
+                    <option value="7">Color Wipe Random</option>
+                    <option value="8">Random Color</option>
+                    <option value="9">Single Dynamic</option>
+                    <option value="10">Multi Dynamic</option>
+                    <option value="11">Rainbow</option>
+                    <option value="12">Rainbow Cycle</option>
+                    <option value="13">Scan</option>
+                    <option value="14">Dual Scan</option>
+                    <option value="15">Fade</option>
+                    <option value="16">Theater Chase</option>
+                    <option value="17">Theater Chase Rainbow</option>
+                    <option value="18">Running Lights</option>
+                    <option value="19">Twinkle</option>
+                    <option value="20">Twinkle Random</option>
+                    <option value="21">Twinkle Fade</option>
+                    <option value="22">Twinkle Fade Random</option>
+                    <option value="23">Sparkle</option>
+                    <option value="24">Flash Sparkle</option>
+                    <option value="25">Hyper Sparkle</option>
+                    <option value="26">Strobe</option>
+                    <option value="27">Strobe Rainbow</option>
+                    <option value="28">Multi Strobe</option>
+                    <option value="29">Blink Rainbow</option>
+                    <option value="30">Chase White</option>
+                    <option value="31">Chase Color</option>
+                    <option value="32">Chase Random</option>
+                    <option value="33">Chase Rainbow</option>
+                    <option value="34">Chase Flash</option>
+                    <option value="35">Chase Flash Random</option>
+                    <option value="36">Chase Rainbow White</option>
+                    <option value="37">Chase Blackout</option>
+                    <option value="38">Chase Blackout Rainbow</option>
+                    <option value="39">Color Sweep Random</option>
+                    <option value="40">Running Color</option>
+                    <option value="41">Running Red Blue</option>
+                    <option value="42">Running Random</option>
+                    <option value="43">Larson Scanner</option>
+                    <option value="44">Comet</option>
+                    <option value="45">Fireworks</option>
+                    <option value="46">Fireworks Random</option>
+                    <option value="47">Merry Christmas</option>
+                    <option value="48">Fire Flicker</option>
+                    <option value="49">Fire Flicker (soft)</option>
+                    <option value="50">Fire Flicker (intense)</option>
+                    <option value="51">Circus Combustus</option>
+                    <option value="52">Halloween</option>
+                    <option value="53">Bicolor Chase</option>
+                    <option value="54">Tricolor Chase</option>
+                    <option value="55">TwinkleFOX</option>
+
+
+                </select>
+
+
+
+
+                <div style="padding-top: 6px"></div>
+                <div class="settings"><span class="settings__title setting-title">Скорость эффекта</span>
+                    <div class="range_input_speed_basic">
+                        <input type="range" id="range_speed_basic" min="0" max="100" step="1">
+                        <div class="value">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <button class="accordion">Service</button>
+            <div class="panel">
+
+
+                <div class="settings"><span class="settings__title setting-title">Антиотравление ламп</span></div>
+
+                <select class="select-css" id="select_time_antiotravlenie">
+
+                    <option value="60">1 минута</option>
+                    <option value="300">5 минут</option>
+                    <option value="600">10 минут</option>
+                    <option value="1800">30 минут</option>
+                    <option value="3600">1 час</option>
+                    <option value="7200">2 часа</option>
+                    <option value="10800">3 часа</option>
+                    <option value="18000">5 часов</option>
+                    <option value="36000">10 часов</option>
+                    <option value="0">Без таймера</option>
+
+
+
+                </select>
+
+                <div class="setting">
+                    <input type="checkbox" id="checkbox_antiotravlenie" />
+                    <label for="checkbox_antiotravlenie">Запуск</label>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!-- <button class="button_click" id="save_param">Сохранить</button> -->
+        <div style="padding-top: 10px"></div>
+
+        <button class="button_click" id="button_default_settings_esp8266">Настройки по умолчанию</button>
+
+        <div style="padding-top: 10px"></div>
+
+        <button class="button_click" id="button_reboot_esp8266">Перезагрузить</button>
+
+
+
+        <div class="labelversia" id="label_versia">IN-12 Clock by M.Semerkov v.2.1(2021)</div>
+
+
+        <div class="modal_save_settings_connect">
+            <div class="modal-content">
+                <div id="modal_text_window"> </div>
+                <div style="padding-top: 15px"></div>
+                <div id="modal_text_ssid"></div>
+                <div id="modal_text_password"></div>
+                <div style="padding-top: 15px"></div>
+                <button class="button_click" id="button_click_save_modal">Сохранить</button>
+                <button class="button_click" id="button_click_ok_modal">OK</button>
+
+            </div>
+        </div>
+
+
+        <div class="modal_wifi_settings_connect">
+            <div class="modal-content" style="display: none;">
+                <div id="modal_text_window"> </div>
+                <div style="padding-top: 15px"></div>
+                <div id="modal_text_ssid"></div>
+                <div id="modal_text_password"></div>
+                <div style="padding-top: 15px"></div>
+                <button class="button_click" id="button_click_save_modal">Сохранить</button>
+                <button class="button_click" id="button_click_ok_modal">OK</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+    <script src="js/get_settings_controlls.js"></script>
+    <script src="js/my_controll_script.js"></script>
+    <script src="js/accordion_script.js"></script>
+    <script src="js/range_scrool_bar_front.js"></script>
+    <script src="js/element_color.js"></script>
+    <script src="js/modal_window_script.js"></script>
+    <script src="js/range_scrool_script.js"></script>
+    <script src="js/modal_window_script.js"></script>
+
+</body>
+
+
+
+</html>

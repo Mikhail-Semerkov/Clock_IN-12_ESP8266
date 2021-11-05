@@ -1,0 +1,48 @@
+.accordion {
+color: #fff;
+margin-bottom: 10px;
+border-radius: 6px;
+color: #444;
+cursor: pointer;
+padding: 8px;
+border: 3px;
+text-align: center;
+font-size: 20px;
+font-family:unset;
+font: bold;
+right: 5px;
+top: 10px;
+font-size: 20px;
+transition: all 0.3s;
+}
+
+.active, .accordion:hover 
+{
+    color: #fff;
+    font: bold;
+    transform: scale(1);
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    background-color: rgba(255, 255, 255, 0.10);
+
+}
+
+.panel 
+{
+    border-radius: 6px;
+    padding: auto;
+    display: none;
+    background: rgba(255, 236, 236, 0.08);
+    border-radius: 8px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 20px;
+    color: #fff;
+    margin-bottom: 7px;
+    transform: rotate(0deg);
+    
+}
